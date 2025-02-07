@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  * Copyright (c) Steve Springett. All Rights Reserved.
  */
+
 package alpine.server.auth;
 
 import com.nimbusds.openid.connect.sdk.claims.ClaimsSet;
@@ -30,6 +31,6 @@ public interface OidcAuthenticationCustomizer {
 
     OidcProfile mergeProfiles(OidcProfile left, OidcProfile right);
 
-    OidcUser onAuthenticationSuccess(OidcUser user, OidcProfile profile, String idToken, String accessToken);
+    OidcUser onAuthenticationSuccess(OidcProfile profile) throws AlpineAuthenticationException;
 
 }

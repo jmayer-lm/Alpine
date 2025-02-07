@@ -23,14 +23,18 @@ import java.util.List;
 
 import net.minidev.json.JSONObject;
 
+import net.minidev.json.JSONObject;
+
 /**
  * @since 1.10.0
  */
 public class OidcProfile {
+public class OidcProfile {
 
     private String subject, username, email;
+    private String subject, username, email;
     private List<String> groups;
-    private JSONObject customValues = new JSONObject();
+    private JSONObject customValues;
 
     public Object getCustomValue(final String key) {
         return customValues.get(key);
@@ -53,35 +57,44 @@ public class OidcProfile {
     }
 
     public void setSubject(final String subject) {
+    public void setSubject(final String subject) {
         this.subject = subject;
     }
 
+    public String getUsername() {
     public String getUsername() {
         return username;
     }
 
     public void setUsername(final String username) {
+    public void setUsername(final String username) {
         this.username = username;
     }
 
+    public List<String> getGroups() {
     public List<String> getGroups() {
         return groups;
     }
 
     public void setGroups(final List<String> groups) {
+    public void setGroups(final List<String> groups) {
         this.groups = groups;
     }
 
     public String getEmail() {
+    public String getEmail() {
         return email;
     }
 
+    public void setEmail(final String email) {
     public void setEmail(final String email) {
         this.email = email;
     }
 
     @Override
     public String toString() {
+        return "%s{subject='%s', username='%s', groups=%s, email='%s', customValues=%s"
+                .formatted(getClass().getName(), subject, username, groups, email, customValues);
         return "%s{subject='%s', username='%s', groups=%s, email='%s', customValues=%s"
                 .formatted(getClass().getName(), subject, username, groups, email, customValues);
     }
