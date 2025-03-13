@@ -337,7 +337,7 @@ public class JsonWebToken {
             final List<Permission> permissions,
             final IdentityProvider identityProvider,
             final int ttlSeconds) {
-        return createToken(principal, permissions, identityProvider, ttlSeconds, null);
+        return createToken(principal, permissions, identityProvider, ttlSeconds, extraClaims);
     }
 
     /**
